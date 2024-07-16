@@ -1,0 +1,49 @@
+.home-view{
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: white;
+    position: relative;
+    top: 0px;
+}
+
+.big-food-image{
+    height: 40%;
+    width: 100%;
+}
+
+.highlight{
+    height: fit-content;
+    display: flex;
+}
+
+.biopic{
+    height: 80%;
+    width: 50%;
+    padding: 2%;
+}
+
+.highlight .textbox{
+    font-family: georgia, 'sans serif';
+    text-align: center;
+    text-wrap: wrap;
+    height: 65%;
+    width: 70%;
+    margin-top: 2%;
+    background-color: white;
+}
+
+.textbox h2{
+    font-size: 1em;
+    text-wrap: nowrap;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+}
+
+.textbox p{
+    padding-top: -1%;
+    font-size: smaller;
+    font-weight: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+}
+

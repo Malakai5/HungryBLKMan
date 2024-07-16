@@ -1,0 +1,92 @@
+.genre-button{
+    height: 80%;
+    width: 90%;
+    font-size: .75em;
+    margin: 1.5% 3% 1.5% 0%;
+    font-weight: bold;
+    background-color: white;
+    display: block;
+    left: 0;
+    border-width: 1px;
+}
+
+.genre-button .medium{
+    height: 80%;
+    width: 80%;
+    font-size: .75em;
+    font-weight: bold;
+    margin: 1.5% 3% 1.5% 4%;
+    background-color: white;
+    display: block;
+    left: 0;
+}
+
+.genre-button .large{
+    height: 30%;
+    width: 30%;
+    font-size: 1.5em;
+    margin: 1.5% 3% 1.5% 4%;
+    background-color: white;
+    display: block;
+}
+
+.genre-button .small{
+    height: 15%;
+    width: 15%;
+    font-size: .75em;
+    margin: 1.5% 3% 1.5% 4%;
+    background-color: white;
+    display: block;
+}
+
+.social-link{
+    padding-right: 5%;
+}
+
+.button-slider{
+    height: 25%;
+    width: 100%;
+}
+
+.filter-list{
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 0;
+    padding: 0;
+    display: flex;
+}
+
+.segment-bar{
+    width: 5%;
+    height: 80%;
+    margin-top: 3%;
+    position: absolute;
+    right: 2%;
+    background-color: white;
+    font-size: 50%;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    border: 5px solid black;
+    display: flex;
+}
+
+.segment{
+    width: 100%;
+    height: 20%;
+    background-color: white;
+    border-width: 5px;
+    border-color: black;
+    position: relative;
+}
+
+.filter-button{
+    height: 80%;
+    width: 90%;
+    font-size: .75em;
+    margin: 1.5% 3% 1.5% 0%;
+    font-weight: bold;
+    background-color: white;
+    display: block;
+    left: 0;
+    border-width: 1px;
+}
