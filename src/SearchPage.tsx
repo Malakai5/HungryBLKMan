@@ -1,6 +1,6 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import RestaurantCard from "./components/RestaurantCard";
+// import RestaurantCard from "./components/RestaurantCard";
 import SearchBar from "./components/SearchBar";
 import "./SearchPage.css";
 import { location, restaurant } from "./types";
@@ -77,11 +77,7 @@ const SearchPage = () => {
       <Navbar></Navbar>
       <div className="search-view">
         <SearchBar></SearchBar>
-        <div className="card-view">
-          <RestaurantCard></RestaurantCard>
-          <RestaurantCard></RestaurantCard>
-          <RestaurantCard></RestaurantCard>
-        </div>
+        <div className="card-view"></div>
       </div>
       <Footer></Footer>
     </>
