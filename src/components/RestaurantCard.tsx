@@ -1,11 +1,12 @@
 import "./RestaurantCard.css";
+import FoodPic from "../assets/FoodPictures/EthiopianFood.jpg"
 
 interface Props {
   image?: string;
   description?: string;
   title: string;
   address: string;
-  rating: number;
+  rating?: number;
 }
 
 const RestaurantCard = ({ description, title, address }: Props) => {
@@ -17,7 +18,7 @@ const RestaurantCard = ({ description, title, address }: Props) => {
           <p className="address">{address}</p>
           <p className="summary">{description}</p>
         </div>
-        <div className="card-image"></div>
+        <img className="card-image" src={FoodPic}></img>
         <div className="bussin-meter">
           <p className="message">BUSSINMETER</p>
           <div className="segment"></div>

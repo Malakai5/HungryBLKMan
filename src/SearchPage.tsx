@@ -1,6 +1,6 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-// import RestaurantCard from "./components/RestaurantCard";
+import RestaurantCard from "./components/RestaurantCard";
 import SearchBar from "./components/SearchBar";
 import "./SearchPage.css";
 import { location, restaurant } from "./types";
@@ -77,7 +77,11 @@ const SearchPage = () => {
       <Navbar></Navbar>
       <div className="search-view">
         <SearchBar></SearchBar>
-        <div className="card-view"></div>
+        <div className="card-view">
+          <RestaurantCard description="Queen of Sheba Ethiopian Food Restaurant offers an authentic dining experience that captures the essence of Ethiopian culture and cuisine."
+           title="Queen of sheba" 
+           address="Ethiopa"></RestaurantCard>
+        </div>
       </div>
       <Footer></Footer>
     </>
