@@ -4,6 +4,7 @@
     background-color:tomato;
     border-radius: 0;
     border: 0;
+    display: block;
 }
 
 .card-info{
@@ -82,8 +83,17 @@
     position: absolute;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    font-size: 50%;
+    font-size: .7em;
     margin: 0;
     color: black;
     z-index: 2;
 }
+
+.card .filters{
+    width: 100%;
+    margin: 1%;
+    padding: 0;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+} 

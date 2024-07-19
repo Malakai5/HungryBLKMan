@@ -23,9 +23,10 @@ const responsive = {
 
   interface Props{
     items : Array<string>
+    disabled? : boolean
   }
 
-const ButtonSlider = ({items}: Props) => {
+const ButtonSlider = ({items, disabled = false}: Props) => {
   return (
     <div className="button-slider">
       <Carousel
@@ -41,7 +42,7 @@ const ButtonSlider = ({items}: Props) => {
       >
         {items.map((item, index) => {
             return (
-                <FoodGenreButton genreName={item} key={index}></FoodGenreButton>
+                <FoodGenreButton genreName={item} key={index} disabled={disabled}></FoodGenreButton>
             );
         })}
       </Carousel>

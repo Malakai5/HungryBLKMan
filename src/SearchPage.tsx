@@ -5,6 +5,8 @@ import SearchBar from "./components/SearchBar";
 import "./SearchPage.css";
 import { location, restaurant } from "./types";
 
+const filters: string[] = ["Ethiopian", "Sit down"];
+
 let originalRestaurantList: Array<restaurant> = [];
 
 function addRestaurant(restaurant: any, location: any) {
@@ -25,6 +27,8 @@ function addRestaurant(restaurant: any, location: any) {
     location: tempLocation,
     priceRange: restaurant.price_range,
     rating: restaurant.rating,
+    description: restaurant.description,
+    imagePath: restaurant.imagePath,
   };
 
   originalRestaurantList.push(tempRestaurant);
@@ -51,6 +55,7 @@ function getAllRestaurants() {
     body: raw,
     redirect: "follow",
   };
+  originalRestaurantList = new Array<restaurant>
 
   fetch(
     "https://y629tb85u6.execute-api.us-east-1.amazonaws.com/dev/search",
@@ -67,9 +72,30 @@ function getAllRestaurants() {
         addRestaurant(currentRestaurant, currentLocation);
       }
       originalRestaurantList.forEach((restaurant) => console.log(restaurant));
+      
     });
 }
-window.addEventListener("pageshow", getAllRestaurants);
+
+getAllRestaurants();
+
+
+function createCard(restaurant: restaurant) {
+  let address =
+    restaurant.location.addressNumber +
+    " " +
+    restaurant.location.streetName +
+    ", " +
+    restaurant.location.state;
+  return (
+    <RestaurantCard
+      description={restaurant.description}
+      title={restaurant.name}
+      address={address}
+      rating={restaurant.rating * 20}
+      filters={filters}
+    ></RestaurantCard>
+  );
+}
 
 const SearchPage = () => {
   return (
@@ -78,9 +104,11 @@ const SearchPage = () => {
       <div className="search-view">
         <SearchBar></SearchBar>
         <div className="card-view">
-          <RestaurantCard description="Queen of Sheba Ethiopian Food Restaurant offers an authentic dining experience that captures the essence of Ethiopian culture and cuisine."
-           title="Queen of sheba" 
-           address="Ethiopa"></RestaurantCard>
+          {originalRestaurantList.map((restaurant) => {
+            return (
+              createCard(restaurant)
+            );
+          })}
         </div>
       </div>
       <Footer></Footer>

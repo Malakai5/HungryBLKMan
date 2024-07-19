@@ -20,4 +20,6 @@ export type restaurant = {
     location: location;
     priceRange: number;
     rating: number;
+    description: string;
+    imagePath: string;
 }
