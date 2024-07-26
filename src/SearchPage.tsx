@@ -5,9 +5,8 @@ import SearchBar from "./components/SearchBar";
 import "./SearchPage.css";
 import { location, restaurant } from "./types";
 
-const filters: string[] = ["Ethiopian", "Sit down"];
 
-function createCard(restaurant: restaurant) {
+function createCard(restaurant: restaurant, index : number) {
   let address =
     restaurant.location.addressNumber +
     " " +
@@ -17,6 +16,7 @@ function createCard(restaurant: restaurant) {
   let filters = [restaurant.type];
   return (
     <RestaurantCard
+    key={index}
       description={restaurant.description}
       title={restaurant.name}
       address={address}
@@ -37,8 +37,8 @@ const SearchPage = ({ restaurants }: Props) => {
       <div className="search-view">
         <SearchBar></SearchBar>
         <div className="card-view">
-          {restaurants.map((restaurant) => {
-            return createCard(restaurant);
+          {restaurants.map((restaurant, index) => {
+            return createCard(restaurant, index);
           })}
         </div>
       </div>

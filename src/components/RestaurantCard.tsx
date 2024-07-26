@@ -16,11 +16,11 @@ interface Props {
 const RestaurantCard = ({ description, title, address, filters, rating }: Props) => {
   return (
     <div className="card" key={title}>
-      <div className="card-info">
-        <div className="card-description">
-          <h3 className="title">{title}</h3>
-          <p className="address">{address}</p>
-          <p className="summary">{description}</p>
+      <div className="card-info" key={"card-info"}>
+        <div className="card-description" key={"Hollow"}>
+          <h3 className="title" key="title">{title}</h3>
+          <p className="address" key="address">{address}</p>
+          <p className="summary" key="summary">{description}</p>
         </div>
         <img className="card-image" src={FoodPic}></img>
         <SegmentBar rating={rating}></SegmentBar>
