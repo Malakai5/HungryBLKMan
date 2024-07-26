@@ -61,13 +61,8 @@ const App = () => {
       );
       const data = await response.json();
       const restaurants = await data.body.map((r: any) => {
-        console.log(r.location)
         return JSONStringToRestaurant(JSON.parse(r.restaurant),JSON.parse(r.location));
-      }); // extracting 'name' prop into array of names
-
-      // for (let i = 0; i < restaurants.length; i++) {
-      //   console.log(restaurants[i]);
-      // }
+      });
 
       setMyArray(restaurants);
     };
