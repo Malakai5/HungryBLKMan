@@ -3,10 +3,9 @@ import Navbar from "./components/Navbar";
 import RestaurantCard from "./components/RestaurantCard";
 import SearchBar from "./components/SearchBar";
 import "./SearchPage.css";
-import { location, restaurant } from "./types";
+import { restaurant } from "./types";
 
-
-function createCard(restaurant: restaurant, index : number) {
+function createCard(restaurant: restaurant, index: number) {
   let address =
     restaurant.location.addressNumber +
     " " +
@@ -16,7 +15,7 @@ function createCard(restaurant: restaurant, index : number) {
   let filters = [restaurant.type];
   return (
     <RestaurantCard
-    key={index}
+      key={index}
       description={restaurant.description}
       title={restaurant.name}
       address={address}
