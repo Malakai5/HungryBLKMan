@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import RestaurantCard from "./components/RestaurantCard";
@@ -30,13 +31,34 @@ interface Props {
 }
 
 const SearchPage = ({ restaurants }: Props) => {
+  const [chosenRestaurants, setChosenRestaurants] = useState(Array<restaurant>);
+
+  const handleFilterSelected = (filter: string) => {
+    let tempRests = restaurants.filter(
+      (restaurant) => restaurant.type === filter
+    );
+    setChosenRestaurants(tempRests);
+  };
+
+  const handleTextChange = (text: string) => {
+    let lengthOfTest = text.length;
+    console.log(lengthOfTest);
+    let tempRests = restaurants.filter((restaurant) =>
+      restaurant.name.includes(text)
+    );
+    setChosenRestaurants(tempRests);
+  };
+
   return (
     <>
       <Navbar></Navbar>
       <div className="search-view">
-        <SearchBar></SearchBar>
+        <SearchBar
+          onSelectFilter={handleFilterSelected}
+          onTextEntry={handleTextChange}
+        ></SearchBar>
         <div className="card-view">
-          {restaurants.map((restaurant, index) => {
+          {chosenRestaurants.map((restaurant, index) => {
             return createCard(restaurant, index);
           })}
         </div>
