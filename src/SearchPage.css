@@ -20,6 +20,17 @@
     overflow-x: hidden;
 }
 
+.add-button{
+  height: 10%;
+  width: 100%;
+  background-color:firebrick;
+  font-weight: 800;
+  font-size: larger;
+  color: white;
+  position: absolute;
+  bottom: 0;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 20px;

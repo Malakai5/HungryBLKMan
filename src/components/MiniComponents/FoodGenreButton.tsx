@@ -5,10 +5,14 @@ interface Props {
   genreName: string;
   size?: string;
   disabled?: boolean;
-  onSelectFilter: (filter: string) => void
+  onSelectFilter: (filter: string) => void;
 }
 
-const FoodGenreButton = ({ genreName, disabled = false, onSelectFilter }: Props) => {
+const FoodGenreButton = ({
+  genreName,
+  disabled = false,
+  onSelectFilter,
+}: Props) => {
   const [active, setActive] = useState("");
   return (
     <button
@@ -19,8 +23,11 @@ const FoodGenreButton = ({ genreName, disabled = false, onSelectFilter }: Props)
         console.log("clicked");
         if (active.length === 0) {
           setActive("-active");
-          onSelectFilter(genreName)
-        } else setActive("");
+          onSelectFilter(genreName);
+        } else {
+          onSelectFilter(genreName);
+          setActive("");
+        }
       }}
     >
       {genreName}

@@ -33,10 +33,18 @@ interface Props {
 const SearchPage = ({ restaurants }: Props) => {
   const [chosenRestaurants, setChosenRestaurants] = useState(Array<restaurant>);
 
-  const handleFilterSelected = (filter: string) => {
-    let tempRests = restaurants.filter(
-      (restaurant) => restaurant.type === filter
-    );
+  const handleFilterSelected = async (filters: Array<string>) => {
+    console.log(filters);
+
+    let tempRests: Array<restaurant> = restaurants;
+
+    for (let i = 0; i < filters.length; i++) {
+      tempRests = tempRests.filter(
+        (restaurant) => restaurant.type === filters[i]
+      );
+    }
+
+    //useState is one step behind(Same problem as text input)
     setChosenRestaurants(tempRests);
   };
 
@@ -62,6 +70,7 @@ const SearchPage = ({ restaurants }: Props) => {
             return createCard(restaurant, index);
           })}
         </div>
+        <button className="add-button"> Add a new restaurant </button>
       </div>
       <Footer></Footer>
     </>

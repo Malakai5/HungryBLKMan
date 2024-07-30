@@ -8,7 +8,7 @@
 
 .search-logo{
     width: 100%;
-    height: 50%;
+    height: 33%;
     display: flex;
 }
 
@@ -34,6 +34,17 @@ textarea{
     width: 100%;
     margin-top: 2%;
     margin-left: 0;
+    margin-bottom: 0;
     padding: 0;
     display: flex;
+}
+
+.filter-toggler{
+    height: 20%;
+    width: 100%;
+    font-size: 100%;
+    font-weight: 600;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
