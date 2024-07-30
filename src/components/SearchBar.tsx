@@ -4,7 +4,7 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../../node_modules/bootstrap/dist/js/bootstrap.js";
 import logo from "../assets/HungryLogo.png";
 import ButtonSlider from "./MiniComponents/ButtonSlider";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const genres: string[] = [
   "Korean BBQ",
@@ -21,26 +21,37 @@ interface props {
 
 const SearchBar = ({ onSelectFilter, onTextEntry }: props) => {
   const [inputValue, setInputValue] = useState("");
-  const [selectedFilters, setSelectedFilters] = useState(Array<string>);
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
   const handleInputChange = (event: any) => {
     setInputValue(event.target.value);
-    onTextEntry(inputValue);
   };
+
+  useEffect(() => {
+    onTextEntry(inputValue);
+  }, [inputValue]);
 
   const handleFilterSelected = (filter: string) => {
-    let filters: Array<string> = selectedFilters;
+    let tempFilters: Array<string> = [];
+    console.log(selectedFilters);
 
-    if (filters.includes(filter)) {
+    if (selectedFilters.includes(filter)) {
       console.log("list includes: " + filter);
-      setSelectedFilters(selectedFilters.filter((entry) => entry !== filter));
+      tempFilters = selectedFilters.filter((entry) => entry !== filter);
     } else {
       console.log("adding: " + filter);
-      filters.push(filter);
-      setSelectedFilters(filters);
+      for (let i = 0; i < selectedFilters.length; i++) {
+        tempFilters.push(selectedFilters[i]);
+      }
+      tempFilters.push(filter);
     }
-    onSelectFilter(selectedFilters);
+
+    setSelectedFilters(tempFilters);
   };
+
+  useEffect(() => {
+    onSelectFilter(selectedFilters);
+  }, [selectedFilters]);
 
   return (
     <div className="bar">

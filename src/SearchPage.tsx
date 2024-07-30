@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import RestaurantCard from "./components/RestaurantCard";
@@ -34,8 +34,6 @@ const SearchPage = ({ restaurants }: Props) => {
   const [chosenRestaurants, setChosenRestaurants] = useState(Array<restaurant>);
 
   const handleFilterSelected = async (filters: Array<string>) => {
-    console.log(filters);
-
     let tempRests: Array<restaurant> = restaurants;
 
     for (let i = 0; i < filters.length; i++) {
@@ -49,8 +47,6 @@ const SearchPage = ({ restaurants }: Props) => {
   };
 
   const handleTextChange = (text: string) => {
-    let lengthOfTest = text.length;
-    console.log(lengthOfTest);
     let tempRests = restaurants.filter((restaurant) =>
       restaurant.name.includes(text)
     );

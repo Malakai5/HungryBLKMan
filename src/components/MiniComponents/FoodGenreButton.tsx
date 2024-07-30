@@ -20,7 +20,6 @@ const FoodGenreButton = ({
       key={genreName}
       disabled={disabled}
       onClick={() => {
-        console.log("clicked");
         if (active.length === 0) {
           setActive("-active");
           onSelectFilter(genreName);
