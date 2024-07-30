@@ -1,6 +1,7 @@
 .genre-button{
-    height: 80%;
+    height: 50%;
     width: 90%;
+    min-width: 100px;
     font-size: .75em;
     margin: 1.5% 3% 1.5% 0%;
     font-weight: bold;
@@ -12,8 +13,9 @@
 }
 
 .genre-button-active{
-    height: 80%;
+    height: 50%;
     width: 90%;
+    min-width: 100px;
     font-size: .75em;
     margin: 1.5% 3% 1.5% 0%;
     font-weight: bold;
