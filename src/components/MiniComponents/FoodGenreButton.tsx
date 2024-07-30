@@ -5,6 +5,7 @@ interface Props {
   genreName: string;
   size?: string;
   disabled?: boolean;
+  onCard? : string;
   onSelectFilter: (filter: string) => void;
 }
 
@@ -12,11 +13,12 @@ const FoodGenreButton = ({
   genreName,
   disabled = false,
   onSelectFilter,
+  onCard = ""
 }: Props) => {
   const [active, setActive] = useState("");
   return (
     <button
-      className={"genre-button" + active}
+      className={"genre-button" + active + onCard}
       key={genreName}
       disabled={disabled}
       onClick={() => {

@@ -42,6 +42,7 @@ const RestaurantCard = ({
           items={filters}
           disabled={true}
           onSelectFilter={() => {}}
+          onCard="-card"
         ></ButtonSlider>
       </ul>
     </div>
