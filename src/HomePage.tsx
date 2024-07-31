@@ -7,14 +7,14 @@ import OpeningBox from "./components/OpeningBox";
 import HeaderBar from "./components/HeaderBar";
 import "./HomePage.css";
 
-import firstImage from "./assets/FoodPictures/CubanFood.jpg";
-import secondImage from "./assets/FoodPictures/EthiopianFood.jpg";
-import thirdImage from "./assets/FoodPictures/Pasta.jpg";
-import fourthImage from "./assets/FoodPictures/Ramen.jpg";
-import fifthImage from "./assets/FoodPictures/SoulFood.jpg";
-import sixthImage from "./assets/FoodPictures/Steak.jpg";
-import seventhImage from "./assets/FoodPictures/Waffle.jpg";
-import eighthImage from "./assets/FoodPictures/Wangz.jpg";
+import firstImage from "./assets/FoodCarousel/CubanFood.jpg";
+import secondImage from "./assets/FoodCarousel/EthiopianFood.jpg";
+import thirdImage from "./assets/FoodCarousel/Pasta.jpg";
+import fourthImage from "./assets/FoodCarousel/Ramen.jpg";
+import fifthImage from "./assets/FoodCarousel/SoulFood.jpg";
+import sixthImage from "./assets/FoodCarousel/Steak.jpg";
+import seventhImage from "./assets/FoodCarousel/Waffle.jpg";
+import eighthImage from "./assets/FoodCarousel/Wangz.jpg";
 import Footer from "./components/Footer";
 
 const firstItems = [

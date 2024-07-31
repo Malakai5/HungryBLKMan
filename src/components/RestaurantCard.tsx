@@ -1,6 +1,5 @@
 import "./RestaurantCard.css";
 import "./MiniComponents/MiniComponents.css";
-import FoodPic from "../assets/FoodPictures/EthiopianFood.jpg";
 import ButtonSlider from "./MiniComponents/ButtonSlider";
 import SegmentBar from "./MiniComponents/SegmentBar";
 
@@ -34,7 +33,10 @@ const RestaurantCard = ({
             {description}
           </p>
         </div>
-        <img className="card-image" src={FoodPic}></img>
+        <img
+          className="card-image"
+          src={require("../assets/RestaurantPics/BlueFlame.jpg")}
+        ></img>
         <SegmentBar rating={rating}></SegmentBar>
       </div>
       <ul className="filters">
