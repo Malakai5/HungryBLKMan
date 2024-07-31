@@ -18,7 +18,10 @@ const RestaurantCard = ({
   address,
   filters,
   rating,
+  image = "NotFound.png",
 }: Props) => {
+  const imageSrc = "../assets/RestaurantPics/NotFound.png";
+  console.log(imageSrc);
   return (
     <div className="card" key={title}>
       <div className="card-info" key={"card-info"}>
@@ -35,7 +38,7 @@ const RestaurantCard = ({
         </div>
         <img
           className="card-image"
-          src={require("../assets/RestaurantPics/BlueFlame.jpg")}
+          src="https://hungryblkman.s3.amazonaws.com/headshot.png"
         ></img>
         <SegmentBar rating={rating}></SegmentBar>
       </div>
