@@ -1,6 +1,6 @@
 .search-view{
     min-width: 100vw;
-    min-height: 90vh;
+    height: 80vh;
     background-color:gold;
     position: relative;
     top: 0px;
