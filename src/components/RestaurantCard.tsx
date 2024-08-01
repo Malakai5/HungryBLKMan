@@ -1,5 +1,6 @@
 import "./RestaurantCard.css";
 import "./MiniComponents/MiniComponents.css";
+import NotFoundImage from "../assets/RestaurantPics/NotFound.png";
 import ButtonSlider from "./MiniComponents/ButtonSlider";
 import SegmentBar from "./MiniComponents/SegmentBar";
 
@@ -18,10 +19,12 @@ const RestaurantCard = ({
   address,
   filters,
   rating,
-  image = "NotFound.png",
+  image,
 }: Props) => {
-  const imageSrc = "../assets/RestaurantPics/NotFound.png";
-  console.log(imageSrc);
+  let imageSrc = image;
+  if (imageSrc === null) {
+    imageSrc = NotFoundImage;
+  }
   return (
     <div className="card" key={title}>
       <div className="card-info" key={"card-info"}>
@@ -36,10 +39,7 @@ const RestaurantCard = ({
             {description}
           </p>
         </div>
-        <img
-          className="card-image"
-          src="https://hungryblkman.s3.amazonaws.com/headshot.png"
-        ></img>
+        <img className="card-image" src={imageSrc}></img>
         <SegmentBar rating={rating}></SegmentBar>
       </div>
       <ul className="filters">

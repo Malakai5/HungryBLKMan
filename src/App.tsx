@@ -23,7 +23,7 @@ function JSONStringToRestaurant(restaurant: any, location: any) {
     priceRange: restaurant.price_range,
     rating: restaurant.rating,
     description: restaurant.description,
-    imagePath: restaurant.imagePath,
+    imagePath: restaurant.image_path,
   };
 
   return tempRestaurant;

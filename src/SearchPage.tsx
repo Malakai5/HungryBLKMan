@@ -22,6 +22,7 @@ function createCard(restaurant: restaurant, index: number) {
       address={address}
       rating={restaurant.rating * 20}
       filters={filters}
+      image={restaurant.imagePath}
     ></RestaurantCard>
   );
 }

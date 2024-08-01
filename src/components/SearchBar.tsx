@@ -59,13 +59,10 @@ const SearchBar = ({ onSelectFilter, onTextEntry }: props) => {
 
   const handleFilterSelected = (filter: string) => {
     let tempFilters: Array<string> = [];
-    console.log(selectedFilters);
 
     if (selectedFilters.includes(filter)) {
-      console.log("list includes: " + filter);
       tempFilters = selectedFilters.filter((entry) => entry !== filter);
     } else {
-      console.log("adding: " + filter);
       for (let i = 0; i < selectedFilters.length; i++) {
         tempFilters.push(selectedFilters[i]);
       }
