@@ -1,11 +1,10 @@
 .search-view{
     min-width: 100vw;
-    min-height: 80vh;
+    min-height: 90vh;
     background-color:gold;
     position: relative;
     top: 0px;
     scrollbar-color: orange;
-
 }
 
 .card-view{
