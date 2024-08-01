@@ -16,7 +16,7 @@ textarea{
     width: 90%;
     height: 100%;
     text-align: left;
-    font-size: 1em;
+    font-size: .75em;
     background-color: white;
     border-color: black;
     border-width: 2px;
@@ -41,7 +41,7 @@ textarea{
 }
 
 .filter-toggler{
-    height: 20%;
+    height: 25%;
     width: 100%;
     font-size: 100%;
     font-weight: 600;

@@ -94,7 +94,7 @@
     position: absolute;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    font-size: .7em;
+    font-size: 1.2vh;
     margin: 0;
     color: black;
     z-index: 2;
