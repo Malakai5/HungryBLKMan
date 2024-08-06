@@ -6,48 +6,46 @@ import logo from "../assets/HungryLogo.png";
 import ButtonSlider from "./MiniComponents/ButtonSlider";
 import { useEffect, useState } from "react";
 
-
-
 interface props {
   onSelectFilter: (filters: Array<string>) => void;
   onTextEntry: (input: string) => void;
+  filters: string[];
 }
 
-const SearchBar = ({ onSelectFilter, onTextEntry }: props) => {
+const SearchBar = ({ onSelectFilter, onTextEntry, filters }: props) => {
   const [inputValue, setInputValue] = useState("");
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
-  const [foodTypes, setFoodTypes] = useState<string[]>([]);
 
-  function getTypes() {
-    const raw = JSON.stringify({
-      object_type: "column",
-      key: "food_type",
-      table: "restaurant",
-    });
-    const requestOptions: RequestInit = {
-      method: "POST",
-      body: raw,
-      redirect: "follow",
-    };
+  // function getTypes() {
+  //   const raw = JSON.stringify({
+  //     object_type: "column",
+  //     key: "food_type",
+  //     table: "restaurant",
+  //   });
+  //   const requestOptions: RequestInit = {
+  //     method: "POST",
+  //     body: raw,
+  //     redirect: "follow",
+  //   };
 
-    const getMyTypes = async () => {
-      const response = await fetch(
-        "https://y629tb85u6.execute-api.us-east-1.amazonaws.com/dev/filter",
-        requestOptions
-      );
-      const data = await response.json();
-      const types = await data.body.map((r: any) => r);
-      setFoodTypes(types)
-    };
+  //   const getMyTypes = async () => {
+  //     const response = await fetch(
+  //       "https://y629tb85u6.execute-api.us-east-1.amazonaws.com/dev/filter",
+  //       requestOptions
+  //     );
+  //     const data = await response.json();
+  //     const types = await data.body.map((r: any) => r);
+  //     setFoodTypes(types);
+  //   };
 
-    useEffect(() => {
-      let helper = async () => {
-        await getMyTypes();
-      };
-      helper();
-    }, []);
-  }
-  getTypes();
+  //   useEffect(() => {
+  //     let helper = async () => {
+  //       await getMyTypes();
+  //     };
+  //     helper();
+  //   }, []);
+  // }
+  // getTypes();
 
   const handleInputChange = (event: any) => {
     setInputValue(event.target.value);
@@ -91,10 +89,9 @@ const SearchBar = ({ onSelectFilter, onTextEntry }: props) => {
       <ul className="filter-list">
         <ButtonSlider
           onSelectFilter={handleFilterSelected}
-          items={foodTypes}
+          items={filters}
         ></ButtonSlider>
       </ul>
-      <button className="filter-toggler"> More Search Filters </button>
     </div>
   );
 };

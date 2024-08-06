@@ -23,3 +23,8 @@ export type restaurant = {
     description: string;
     imagePath: string;
 }
+
+export type autoCompleteItem = {
+    id: number,
+    name: string
+}
